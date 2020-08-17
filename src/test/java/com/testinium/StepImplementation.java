@@ -6,10 +6,12 @@ import com.thoughtworks.gauge.Step;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 
 public class StepImplementation extends BaseTest {
@@ -50,22 +52,20 @@ public class StepImplementation extends BaseTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frDashboard_rlDeparture")));
         appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frDashboard_rlDeparture")).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frDashboard_calendarPickerView")));
-        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frDashboard_calendarPickerView")).getText();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.ListView[@resource-id=\"com.turkishairlines.mobile:id/frDashboard_calendarPickerView\"]//android.widget.FrameLayout")));
+        WebElement tarihelement=appiumDriver.findElement(By.xpath("(//android.widget.ListView[@resource-id=\"com.turkishairlines.mobile:id/frDashboard_calendarPickerView\"]//android.widget.FrameLayout)["+getToDay()+"]"));
+        tarihelement.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frDashboard_btnDone")));
-        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frDashboard_btnDone")).click();
 
     }
 
-    public void getToDay()
+    public int getToDay()
     {
         Date date=new Date();
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Turkey/İstanbul"));
         cal.setTime(date);
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
+        return (day+7+2);
     }
 
 }
