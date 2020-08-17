@@ -1,0 +1,25 @@
+17-08-2020 17:28:01.878 [Gauge] [INFO] Watching directory: C:\Users\testinium\Desktop\THYMobilTest\specs
+17-08-2020 17:28:01.878 [Gauge] [DEBUG] Found 1 files
+17-08-2020 17:28:01.880 [Gauge] [INFO] Initializing concepts cache with 0 concepts
+17-08-2020 17:28:01.881 [Gauge] [INFO] Initializing specs cache with 1 specs
+17-08-2020 17:28:01.881 [Gauge] [DEBUG] Adding specs from C:\Users\testinium\Desktop\THYMobilTest\specs\example.spec
+17-08-2020 17:28:01.881 [Gauge] [INFO] Initializing steps cache with 1 steps
+17-08-2020 17:28:01.881 [Gauge] [INFO] Gauge daemon initialized and listening on port: 53379
+17-08-2020 17:28:14.812 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:<stepText:"ba\305\237la" > 
+17-08-2020 17:28:14.812 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:<stepValue:<stepValue:"ba\305\237la" parameterizedStepValue:"ba\305\237la" > > 
+17-08-2020 17:28:14.813 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:<stepText:"ba\305\237la" > 
+17-08-2020 17:28:14.813 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:<stepValue:<stepValue:"ba\305\237la" parameterizedStepValue:"ba\305\237la" > > 
+17-08-2020 17:30:00.749 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:<stepText:"start" > 
+17-08-2020 17:30:00.749 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:<stepValue:<stepValue:"start" parameterizedStepValue:"start" > > 
+17-08-2020 17:30:03.169 [Gauge] [DEBUG] Api Request Received: messageType:GetAllStepsRequest messageId:2 allStepsRequest:<> 
+17-08-2020 17:30:03.169 [Gauge] [DEBUG] Sending API response: messageType:GetAllStepResponse messageId:2 allStepsResponse:<allSteps:<stepValue:"ba\305\237la" parameterizedStepValue:"ba\305\237la" > > 
+17-08-2020 17:30:03.173 [Gauge] [DEBUG] Api Request Received: messageType:GetAllConceptsRequest messageId:6 allConceptsRequest:<> 
+17-08-2020 17:30:03.173 [Gauge] [DEBUG] Sending API response: messageType:GetAllConceptsResponse messageId:6 allConceptsResponse:<> 
+17-08-2020 17:30:03.285 [Gauge] [DEBUG] Api Request Received: messageType:GetAllStepsRequest messageId:2 allStepsRequest:<> 
+17-08-2020 17:30:03.285 [Gauge] [DEBUG] Sending API response: messageType:GetAllStepResponse messageId:2 allStepsResponse:<allSteps:<stepValue:"ba\305\237la" parameterizedStepValue:"ba\305\237la" > > 
+17-08-2020 17:30:03.285 [Gauge] [DEBUG] Api Request Received: messageType:GetAllConceptsRequest messageId:6 allConceptsRequest:<> 
+17-08-2020 17:30:03.285 [Gauge] [DEBUG] Sending API response: messageType:GetAllConceptsResponse messageId:6 allConceptsResponse:<> 
+17-08-2020 17:30:14.664 [Gauge] [INFO] Spec file added / modified: C:\Users\testinium\Desktop\THYMobilTest\specs\example.spec
+17-08-2020 17:30:14.666 [Gauge] [INFO] Spec file added / modified: C:\Users\testinium\Desktop\THYMobilTest\specs\example.spec
+17-08-2020 20:08:10.576 [Gauge] [DEBUG] Api Request Received: messageType:GetStepValueRequest messageId:4 stepValueRequest:<stepText:"tarih <day>" > 
+17-08-2020 20:08:10.584 [Gauge] [DEBUG] Sending API response: messageType:GetStepValueResponse messageId:4 stepValueResponse:<stepValue:<stepValue:"tarih {}" parameterizedStepValue:"tarih <day>" parameters:"day" > > 
