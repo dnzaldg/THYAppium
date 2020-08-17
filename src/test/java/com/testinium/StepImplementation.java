@@ -37,8 +37,8 @@ public class StepImplementation extends BaseTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frAirportSelection_etSearch")));
         appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frAirportSelection_etSearch")).sendKeys("İstanbul");
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/itemAirport_tvBottom")));
-        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/itemAirport_tvBottom")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@resource-id=\"com.turkishairlines.mobile:id/itemAirport_tvBottom\"]")));
+        appiumDriver.findElement(By.xpath("(//android.widget.TextView[@resource-id=\"com.turkishairlines.mobile:id/itemAirport_tvBottom\"])[3]")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frDashboard_llTo")));
         appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frDashboard_llTo")).click();
@@ -55,6 +55,63 @@ public class StepImplementation extends BaseTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.ListView[@resource-id=\"com.turkishairlines.mobile:id/frDashboard_calendarPickerView\"]//android.widget.FrameLayout")));
         WebElement tarihelement=appiumDriver.findElement(By.xpath("(//android.widget.ListView[@resource-id=\"com.turkishairlines.mobile:id/frDashboard_calendarPickerView\"]//android.widget.FrameLayout)["+getToDay()+"]"));
         tarihelement.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frDashboard_btnDone")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frDashboard_btnDone")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/calendar_grid\"]//android.widget.FrameLayout")));
+        appiumDriver.findElement(By.xpath("(//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/calendar_grid\"]//android.widget.FrameLayout)[7]")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frDashboard_btnSearch")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frDashboard_btnSearch")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/itemFlightSearchParent_ivArrow\"]")));
+        appiumDriver.findElement(By.xpath("(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/itemFlightSearchParent_ivArrow\"])[1]")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/brandItem\"]")));
+        appiumDriver.findElement(By.xpath("(//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/brandItem\"])[1]")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frFlightSearch_btnContinue")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frFlightSearch_btnContinue")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frPickPassengerListItemAdd_ivArrow")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frPickPassengerListItemAdd_ivArrow")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddName")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddName")).sendKeys("Deniz");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName")).sendKeys("Aladağ");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/form_checkbox_right")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/form_checkbox_right")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth")).sendKeys("02.08.1997");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail")).sendKeys("dnz.testapplication@gmail.com");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddFlyerNumber")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddFlyerNumber")).sendKeys("+905376597516");
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_left\"]")));
+        appiumDriver.findElement(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_left\"])[2]")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN")).sendKeys("48085445200");
+
+
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_btnAddPassenger")));
+        appiumDriver.findElement(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_btnAddPassenger")).click();
+
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/frPickPassengerlistheader_imArrow\"])[2]")));
+        appiumDriver.findElement(By.xpath("(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/frPickPassengerlistheader_imArrow\"])[2]")).click();
+
+
+        //com.turkishairlines.mobile:id/frPickPassenger_btnContinue
 
 
     }
