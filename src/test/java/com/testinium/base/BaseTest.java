@@ -25,6 +25,8 @@ public class BaseTest {
         desiredCapabilities.setCapability(MobileCapabilityType.VERSION, "8.0");
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.turkishairlines.mobile");
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.turkishairlines.mobile.ui.ACSplash");
+        desiredCapabilities.setCapability("autoGrantPermissions", true);
+        desiredCapabilities.setCapability("autoDismissAlerts", true);
         URL url = new URL("http://127.0.0.1:4723/wd/hub");
         appiumDriver = new AndroidDriver(url, desiredCapabilities);
         wait=new WebDriverWait(appiumDriver,30);

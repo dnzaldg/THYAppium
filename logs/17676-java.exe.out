@@ -1,0 +1,52 @@
+{"logLevel":"debug","message":"multithreading is set to false"}
+{"logLevel":"debug","message":"Using reflection to scan dependencies for gauge implementations..."}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+{"logLevel":"debug","message":"gauge-java took 1436milliseconds to load and scan. This should be less than 'runner_connection_timeout' config value."}
+{"logLevel":"debug","message":"run 'gauge config runner_connection_timeout' and verify that it is < 1436"}
+{"logLevel":"debug","message":"starting gRPC server..."}
+{"logLevel":"debug","message":"started gRPC server on port 56599"}
+{"logLevel":"info","message":"Listening on port:56599"}
+{"logLevel":"debug","message":"Scanning packages for steps"}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.okButton' and 'com.testinium.StepImplementation.okButton'"}
+{"logLevel":"debug","message":"Found Tamam butonuna tıklanır in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.flyControl' and 'com.testinium.StepImplementation.flyControl'"}
+{"logLevel":"debug","message":"Found Ucusların listelendiği kontrol edilir in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.directionInformation' and 'com.testinium.StepImplementation.directionInformation'"}
+{"logLevel":"debug","message":"Found Yön bilgisi SAW to ESB in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.dateDirection' and 'com.testinium.StepImplementation.dateDirection'"}
+{"logLevel":"debug","message":"Found Tarih bilgisi günün tarihinden 2 gün sonra in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.start' and 'com.testinium.StepImplementation.start'"}
+{"logLevel":"debug","message":"Found start in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.continuationButton' and 'com.testinium.StepImplementation.continuationButton'"}
+{"logLevel":"debug","message":"Found Devam butonuna tıklanır in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.oneDirection' and 'com.testinium.StepImplementation.oneDirection'"}
+{"logLevel":"debug","message":"Found Tek yön ucus secilir in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.addPassenger' and 'com.testinium.StepImplementation.addPassenger'"}
+{"logLevel":"debug","message":"Found Yolcu ekle alanı doldurulur ve devam butonuna tıklanır in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.personIncrease' and 'com.testinium.StepImplementation.personIncrease'"}
+{"logLevel":"debug","message":"Found Yetiskin bilgisi 2 olarak secilir  in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.searchButton' and 'com.testinium.StepImplementation.searchButton'"}
+{"logLevel":"debug","message":"Found Ucus ara butonuna tıklanır in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.economicalFlight' and 'com.testinium.StepImplementation.economicalFlight'"}
+{"logLevel":"debug","message":"Found Ekonomik ucus secilir in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.ticket' and 'com.testinium.StepImplementation.ticket'"}
+{"logLevel":"debug","message":"Found Bilet al butonuna tıklanır in current project scope."}
+{"logLevel":"debug","message":"Scanning packages for hooks"}
+{"logLevel":"debug","message":"Scanned steps (using static parsing + reflections): "}
+{"logLevel":"debug","message":"\tEkonomik ucus secilir : public void economicalFlight()"}
+{"logLevel":"debug","message":"\tTarih bilgisi günün tarihinden 2 gün sonra : public void dateDirection()"}
+{"logLevel":"debug","message":"\tDevam butonuna tıklanır : public void continuationButton()"}
+{"logLevel":"debug","message":"\tstart : public void start()"}
+{"logLevel":"debug","message":"\tYolcu ekle alanı doldurulur ve devam butonuna tıklanır : public void addPassenger()"}
+{"logLevel":"debug","message":"\tYön bilgisi SAW to ESB : public void directionInformation()"}
+{"logLevel":"debug","message":"\tTamam butonuna tıklanır : public void okButton()"}
+{"logLevel":"debug","message":"\tUcus ara butonuna tıklanır : public void searchButton()"}
+{"logLevel":"debug","message":"\tBilet al butonuna tıklanır : public void ticket()"}
+{"logLevel":"debug","message":"\tUcusların listelendiği kontrol edilir : public void flyControl()"}
+{"logLevel":"debug","message":"\tTek yön ucus secilir : public void oneDirection()"}
+{"logLevel":"debug","message":"\tYetiskin bilgisi 2 olarak secilir  : public void personIncrease()"}
+Aug 18, 2020 1:29:28 PM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+INFO: Detected dialect: W3C
+{"logLevel":"debug","message":"Executing 'start' using 'class com.testinium.StepImplementation.start"}
