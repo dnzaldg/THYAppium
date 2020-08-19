@@ -1,0 +1,12 @@
+Created by testinium on 8/19/2020
+
+This is a concept file with following syntax for each concept.
+# Flight
+*start
+*Bilet al "com.turkishairlines.mobile:id/acMain_btnBooking" tıklanır
+*Tek yön "com.turkishairlines.mobile:id/frDashboard_tvOneWay" secilir
+*Yön bilgisi "From" , "To"
+*Tarih bilgisi "com.turkishairlines.mobile:id/frDashboard_rlDeparture" günün tarihinden 2 gün sonra ya seçilir
+*Tamam butonuna "com.turkishairlines.mobile:id/frDashboard_btnDone" tıklanır
+*Yolcu sayısı "(//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/calendar_grid\"]//android.widget.FrameLayout)[7]" olarak seçilir
+*Ucus ara "com.turkishairlines.mobile:id/frDashboard_btnSearch" tıklanır

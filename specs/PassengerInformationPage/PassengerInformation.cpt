@@ -1,0 +1,7 @@
+Created by testinium on 8/19/2020
+
+This is a concept file with following syntax for each concept.
+# Passenger Information
+*1. Yolcu "FirstName",  "LastName", "02-08-1997", "Email", "Tc"
+*2. Yolcu "FirstNameTwo", "LastNameTwo", "22-07-1995", "EmailTwo", "TcTwo"
+*Cancel "com.turkishairlines.mobile:id/toolbarBase_tvCancel" click

@@ -1,0 +1,6 @@
+Created by testinium on 8/19/2020
+
+This is a concept file with following syntax for each concept.
+# Flight Information
+*Ekonomik ucus için "(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/itemFlightSearchParent_ivArrow\"])[1]", "(//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/brandItem\"])[1]" secilir
+*Devam "com.turkishairlines.mobile:id/frFlightSearch_btnContinue" tıklanır

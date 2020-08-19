@@ -1,10 +1,6 @@
 package com.testinium;
-
-
 import com.testinium.base.BaseTest;
 import com.thoughtworks.gauge.Step;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -13,10 +9,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.*;
+
+import static com.testinium.Lab.getValueFromExcel;
 
 public class StepImplementation extends BaseTest {
 
@@ -29,125 +26,136 @@ public class StepImplementation extends BaseTest {
         clickBy(By.id("com.turkishairlines.mobile:id/frPrivacy_btnAccept"));
     }
 
-    @Step("Bilet al butonuna tıklanır")
-    public void ticket()
+    @Step("Bilet al <button> tıklanır")
+    public void ticket(String button)
     {
-       clickBy(By.id("com.turkishairlines.mobile:id/acMain_btnBooking"));
-
+        clickBy(By.id(button));
     }
 
-    @Step("Tek yön ucus secilir")
-    public void oneDirection()
+    @Step("Tek yön <ucus> secilir")
+    public void oneDirection(String ucus)
     {
-         clickBy(By.id("com.turkishairlines.mobile:id/frDashboard_tvOneWay"));
+        clickBy(By.id(ucus));
     }
 
-    @Step("Yön bilgisi SAW to ESB")
-    public void directionInformation()
+    @Step("Yön bilgisi <nereden> , <nereye>")
+    public void directionInformation(String nereden , String nereye)
     {
         clickBy(By.id("com.turkishairlines.mobile:id/frDashboard_llFrom"));
-        String sonuc=getValueFromExcel("fromC");
-        System.out.println(sonuc);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAirportSelection_etSearch"),sonuc);
+
+        nereden=getValueFromExcel("From");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAirportSelection_etSearch"),nereden);
 
         clickBy(By.xpath("(//android.widget.TextView[@resource-id=\"com.turkishairlines.mobile:id/itemAirport_tvBottom\"])[3]"));
 
         clickBy(By.id("com.turkishairlines.mobile:id/frDashboard_llTo"));
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAirportSelection_etSearch"),"Ankara");
+        nereye=getValueFromExcel("To");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAirportSelection_etSearch"),nereye);
 
         clickBy(By.id("com.turkishairlines.mobile:id/itemAirport_tvBottom"));
     }
 
-    @Step("Tarih bilgisi günün tarihinden 2 gün sonra")
-    public void dateDirection()
+    @Step("Tarih bilgisi <button> günün tarihinden 2 gün sonra ya seçilir")
+    public void dateDirection(String button)
     {
-        clickBy(By.id("com.turkishairlines.mobile:id/frDashboard_rlDeparture"));
-
+        clickBy(By.id(button));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.ListView[@resource-id=\"com.turkishairlines.mobile:id/frDashboard_calendarPickerView\"]//android.widget.FrameLayout")));
         WebElement tarihelement=appiumDriver.findElement(By.xpath("(//android.widget.ListView[@resource-id=\"com.turkishairlines.mobile:id/frDashboard_calendarPickerView\"]//android.widget.FrameLayout)["+getToDay()+"]"));
         tarihelement.click();
-
     }
 
-    @Step("Tamam butonuna tıklanır")
-    public void okButton()
+    @Step("Tamam butonuna <button> tıklanır")
+    public void okButton(String button)
     {
-        clickBy(By.id("com.turkishairlines.mobile:id/frDashboard_btnDone"));
+        clickBy(By.id(button));
     }
 
-    @Step("Yolcu sayısı")
-    public void personIncrease()
+    @Step("Yolcu sayısı <button> olarak seçilir")
+    public void personIncrease(String button)
     {
-        clickBy(By.xpath("(//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/calendar_grid\"]//android.widget.FrameLayout)[7]"));
+        clickBy(By.xpath(button));
     }
 
-    @Step("Ucus ara butonuna tıklanır")
-    public void searchButton()
+    @Step("Ucus ara <button> tıklanır")
+    public void searchButton(String button)
     {
-       clickBy(By.id("com.turkishairlines.mobile:id/frDashboard_btnSearch"));
+        clickBy(By.id(button));
     }
+
 
     @Step("Ucusların listelendiği kontrol edilir")
     public void flyControl()
     {
     }
 
-    @Step("Ekonomik ucus secilir")
-    public void economicalFlight()
+    @Step("Ekonomik ucus için <button1>, <button2> secilir")
+    public void economicalFlight(String button1, String button2)
     {
-        clickBy(By.xpath("(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/itemFlightSearchParent_ivArrow\"])[1]"));
-
-        clickBy(By.xpath("(//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/brandItem\"])[1]"));
+        clickBy(By.xpath(button1));
+        clickBy(By.xpath(button2));
     }
 
-    @Step("Devam butonuna tıklanır")
-    public void continuationButton()
+    @Step("Devam <button> tıklanır")
+    public void continuationButton(String button)
     {
-        clickBy(By.id("com.turkishairlines.mobile:id/frFlightSearch_btnContinue"));
+        clickBy(By.id(button));
 
     }
 
-    @Step("Yolcu ekle alanı doldurulur ve devam butonuna tıklanır")
-    public void addPassenger()
+    @Step("1. Yolcu <firstname>,  <lastname>, <birthday>, <email>, <tc>")
+    public void addPassenger(String firstname, String lastname, String birthday, String email, String tc)
     {
         clickBy(By.id("com.turkishairlines.mobile:id/frPickPassengerListItemAdd_ivArrow"));
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddName"), "Deniz");
+        firstname=getValueFromExcel("FirstName");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddName"), firstname);
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName"),"Aladağ");
+        lastname=getValueFromExcel("LastName");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName"),lastname);
 
         clickBy(By.id("com.turkishairlines.mobile:id/form_checkbox_right"));
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth"),"02-08-1997");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth"),birthday);
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail"),"dnz.testapplication@gmail.com");
+        email=getValueFromExcel("Email");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail"),email);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_left\"])[2]"));
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN"),"48085445200");
+        tc=getValueFromExcel("Tc");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN"),tc);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_right\"])[3]"));
 
         clickBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_btnAddPassenger"));
 
+    }
+
+    @Step("2. Yolcu <firstname>, <lastname>, <birthday>, <email>, <tc>")
+    public void secondPassenger(String firstname, String lastname,String birthday, String email, String tc)
+    {
         clickBy(By.xpath("(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/frPickPassengerlistheader_imArrow\"])[2]"));
 
         clickBy(By.xpath("(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/frPickPassengerListItemAdd_ivArrow\"])[2]"));
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddName"),"Pınar");
+        firstname=getValueFromExcel("FirstNameTwo");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddName"),firstname);
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName"),"Aladağ");
+        lastname=getValueFromExcel("LastNameTwo");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName"),lastname);
 
         clickBy(By.id("com.turkishairlines.mobile:id/form_checkbox_right"));
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth"),"22-07-1995");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth"),birthday);
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail"),"pnr.testapplication@gmail.com");
+        email=getValueFromExcel("EmailTwo");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail"),email);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_left\"])[2]"));
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN"),"48091445072");
+        tc=getValueFromExcel("TcTwo");
+        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN"),tc);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_right\"])[3]"));
 
@@ -155,12 +163,13 @@ public class StepImplementation extends BaseTest {
 
         clickBy(By.id("com.turkishairlines.mobile:id/frPickPassenger_btnContinue"));
 
+
     }
 
-    @Step("Finish")
-    public void finish()
+    @Step("Cancel <button> click")
+    public void finish(String button)
     {
-        clickBy(By.id("com.turkishairlines.mobile:id/toolbarBase_tvCancel"));
+        clickBy(By.id(button));
 
     }
 
@@ -174,6 +183,7 @@ public class StepImplementation extends BaseTest {
         return (day+7+2);
     }
 
+    @Step("<by> elementine tıkla")
     public void clickBy(By by)
     {
        WebElement element= wait.until(ExpectedConditions.visibilityOfElementLocated((by)));
@@ -189,6 +199,14 @@ public class StepImplementation extends BaseTest {
         WebElement element= wait.until(ExpectedConditions.visibilityOfElementLocated((by)));
         element.sendKeys(text);
     }
+    public void sendKeysClick(By by, String text)
+    {
+        WebElement element= wait.until(ExpectedConditions.visibilityOfElementLocated((by)));
+        element.click();
+        element.sendKeys(text);
+    }
+
+
 
 
     public void waitElementVisibilityOfByid(String id)
@@ -205,7 +223,7 @@ public class StepImplementation extends BaseTest {
     {
         String retunrValue="";
         try {
-            FileInputStream file = new FileInputStream(new File("informations.xlsx"));
+            FileInputStream file = new FileInputStream(new File("information.xlsx"));
             XSSFWorkbook workbook = new XSSFWorkbook(file);
             XSSFSheet sheet = workbook.getSheetAt(0);
             Iterator<Row> rowIterator = sheet.iterator();
@@ -220,6 +238,10 @@ public class StepImplementation extends BaseTest {
                     Cell cell = cellIterator.next();
                     if (cell.getStringCellValue().equals(key)) {
                         cell = cellIterator.next();
+                        if (cell.getCellType()==Cell.CELL_TYPE_NUMERIC) {
+                            retunrValue = String.valueOf(cell.getNumericCellValue());
+                            break;
+                        }
                         retunrValue= (cell.getStringCellValue());
                     }
 
