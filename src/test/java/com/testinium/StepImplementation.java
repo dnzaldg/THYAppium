@@ -1,28 +1,21 @@
 package com.testinium;
 import com.testinium.base.BaseTest;
 import com.thoughtworks.gauge.Step;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.*;
-
-import static com.testinium.Lab.getValueFromExcel;
-
 public class StepImplementation extends BaseTest {
 
     @Step("start")
     public void start()
     {
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.android.packageinstaller:id/permission_allow_button")));
-        //appiumDriver.findElement(By.id("com.android.packageinstaller:id/permission_allow_button")).click();
-
         clickBy(By.id("com.turkishairlines.mobile:id/frPrivacy_btnAccept"));
     }
 
@@ -39,18 +32,17 @@ public class StepImplementation extends BaseTest {
     }
 
     @Step("Yön bilgisi <nereden> , <nereye>")
-    public void directionInformation(String nereden , String nereye)
-    {
+    public void directionInformation(String nereden , String nereye) throws IOException {
         clickBy(By.id("com.turkishairlines.mobile:id/frDashboard_llFrom"));
 
-        nereden=getValueFromExcel("From");
+        nereden=getValueFromExcel(1,1);
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAirportSelection_etSearch"),nereden);
 
         clickBy(By.xpath("(//android.widget.TextView[@resource-id=\"com.turkishairlines.mobile:id/itemAirport_tvBottom\"])[3]"));
 
         clickBy(By.id("com.turkishairlines.mobile:id/frDashboard_llTo"));
 
-        nereye=getValueFromExcel("To");
+        nereye=getValueFromExcel(2,1);
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAirportSelection_etSearch"),nereye);
 
         clickBy(By.id("com.turkishairlines.mobile:id/itemAirport_tvBottom"));
@@ -104,26 +96,25 @@ public class StepImplementation extends BaseTest {
     }
 
     @Step("1. Yolcu <firstname>,  <lastname>, <birthday>, <email>, <tc>")
-    public void addPassenger(String firstname, String lastname, String birthday, String email, String tc)
-    {
+    public void addPassenger(String firstname, String lastname, String birthday, String email, String tc) throws IOException {
         clickBy(By.id("com.turkishairlines.mobile:id/frPickPassengerListItemAdd_ivArrow"));
 
-        firstname=getValueFromExcel("FirstName");
+        firstname=getValueFromExcel(3,1);
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddName"), firstname);
 
-        lastname=getValueFromExcel("LastName");
+        lastname=getValueFromExcel(4,1);
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName"),lastname);
 
         clickBy(By.id("com.turkishairlines.mobile:id/form_checkbox_right"));
 
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth"),birthday);
 
-        email=getValueFromExcel("Email");
+        email=getValueFromExcel(6,1);
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail"),email);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_left\"])[2]"));
 
-        tc=getValueFromExcel("Tc");
+        tc=getValueFromExcel(7,1);
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN"),tc);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_right\"])[3]"));
@@ -133,28 +124,27 @@ public class StepImplementation extends BaseTest {
     }
 
     @Step("2. Yolcu <firstname>, <lastname>, <birthday>, <email>, <tc>")
-    public void secondPassenger(String firstname, String lastname,String birthday, String email, String tc)
-    {
+    public void secondPassenger(String firstname, String lastname,String birthday, String email, String tc) throws IOException {
         clickBy(By.xpath("(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/frPickPassengerlistheader_imArrow\"])[2]"));
 
         clickBy(By.xpath("(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/frPickPassengerListItemAdd_ivArrow\"])[2]"));
 
-        firstname=getValueFromExcel("FirstNameTwo");
+        firstname=getValueFromExcel(8,1);
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddName"),firstname);
 
-        lastname=getValueFromExcel("LastNameTwo");
+        lastname=getValueFromExcel(9,1);
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName"),lastname);
 
         clickBy(By.id("com.turkishairlines.mobile:id/form_checkbox_right"));
 
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth"),birthday);
 
-        email=getValueFromExcel("EmailTwo");
+        email=getValueFromExcel(11,1);
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail"),email);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_left\"])[2]"));
 
-        tc=getValueFromExcel("TcTwo");
+        tc=getValueFromExcel(12,1);
         sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN"),tc);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_right\"])[3]"));
@@ -199,60 +189,16 @@ public class StepImplementation extends BaseTest {
         WebElement element= wait.until(ExpectedConditions.visibilityOfElementLocated((by)));
         element.sendKeys(text);
     }
-    public void sendKeysClick(By by, String text)
+
+
+    public  String getValueFromExcel(int row, int cell) throws IOException
     {
-        WebElement element= wait.until(ExpectedConditions.visibilityOfElementLocated((by)));
-        element.click();
-        element.sendKeys(text);
-    }
-
-
-
-
-    public void waitElementVisibilityOfByid(String id)
-    {
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated((By.id(id))));
-        }
-        catch (NoSuchElementException e){
-
-        }
-    }
-
-    public  String getValueFromExcel(String key)
-    {
-        String retunrValue="";
-        try {
             FileInputStream file = new FileInputStream(new File("information.xlsx"));
             XSSFWorkbook workbook = new XSSFWorkbook(file);
             XSSFSheet sheet = workbook.getSheetAt(0);
-            Iterator<Row> rowIterator = sheet.iterator();
-
-            while (rowIterator.hasNext())
-            {
-                Row row = rowIterator.next();
-                Iterator<Cell> cellIterator = row.cellIterator();
-
-                while (cellIterator.hasNext())
-                {
-                    Cell cell = cellIterator.next();
-                    if (cell.getStringCellValue().equals(key)) {
-                        cell = cellIterator.next();
-                        if (cell.getCellType()==Cell.CELL_TYPE_NUMERIC) {
-                            retunrValue = String.valueOf(cell.getNumericCellValue());
-                            break;
-                        }
-                        retunrValue= (cell.getStringCellValue());
-                    }
-
-                }
-            }
-            file.close();
-        }
-        catch (Exception e) {
-        }
-        return retunrValue;
+        DataFormatter formatter = new DataFormatter();
+        String val = formatter.formatCellValue(sheet.getRow(row).getCell(cell));
+            //String cellData=sheet.getRow(row).getCell(cell).getStringCellValue();
+            return val;
     }
-
-
 }
