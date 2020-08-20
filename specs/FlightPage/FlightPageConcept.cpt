@@ -1,12 +1,42 @@
 Created by testinium on 8/19/2020
 
 This is a concept file with following syntax for each concept.
-# Flight
-*start
-*Bilet al "com.turkishairlines.mobile:id/acMain_btnBooking" tıklanır
-*Tek yön "com.turkishairlines.mobile:id/frDashboard_tvOneWay" secilir
-*Yön bilgisi "From" , "To"
-*Tarih bilgisi "com.turkishairlines.mobile:id/frDashboard_rlDeparture" günün tarihinden 2 gün sonra ya seçilir
-*Tamam butonuna "com.turkishairlines.mobile:id/frDashboard_btnDone" tıklanır
-*Yolcu sayısı "(//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/calendar_grid\"]//android.widget.FrameLayout)[7]" olarak seçilir
-*Ucus ara "com.turkishairlines.mobile:id/frDashboard_btnSearch" tıklanır
+# Homepage opens
+*Homepage opens "com.turkishairlines.mobile:id/frPrivacy_btnAccept"
+
+# Click on buy ticket button
+*Click Buy ticket "com.turkishairlines.mobile:id/acMain_btnBooking"
+
+# One-way flight is selected
+*One way "com.turkishairlines.mobile:id/frDashboard_tvOneWay" is selected
+
+# Direction information <from>, <to>
+*Departure <from> is selected and "com.turkishairlines.mobile:id/frAirportSelection_etSearch" is clicked, destination <to> is selected and "com.turkishairlines.mobile:id/frAirportSelection_etSearch" is clicked
+
+# Date information is selected 2 days later
+*Date information is either selected 2 days after the current date "com.turkishairlines.mobile:id/frDashboard_rlDeparture"
+
+# Click on the OK button
+*Click the OK button "com.turkishairlines.mobile:id/frDashboard_btnDone"
+
+# The number of adult passengers is selected as 2
+*The number of passengers is selected as 2 "(//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/calendar_grid\"]//android.widget.FrameLayout)[7]"
+
+# Click the search flight button
+*Search flight "com.turkishairlines.mobile:id/frDashboard_btnSearch" is clicked
+
+
+
+# Select the direction information <from> and <to> and search for flights
+*Homepage opens
+*Click on buy ticket button
+*One-way flight is selected
+*Direction information <from>, <to>
+*Date information is selected 2 days later
+*Click on the OK button
+*The number of adult passengers is selected as 2
+*Click the search flight button
+
+
+
+

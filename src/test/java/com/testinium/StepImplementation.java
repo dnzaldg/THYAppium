@@ -13,42 +13,42 @@ import java.io.IOException;
 import java.util.*;
 public class StepImplementation extends BaseTest {
 
-    @Step("start")
-    public void start()
+    @Step("Homepage opens <button>")
+    public void start(String button)
     {
-        clickBy(By.id("com.turkishairlines.mobile:id/frPrivacy_btnAccept"));
+        clickBy(By.id(button));
     }
 
-    @Step("Bilet al <button> tıklanır")
+    @Step("Click Buy ticket <button>")
     public void ticket(String button)
     {
         clickBy(By.id(button));
     }
 
-    @Step("Tek yön <ucus> secilir")
-    public void oneDirection(String ucus)
+    @Step("One way <flight> is selected")
+    public void oneDirection(String flight)
     {
-        clickBy(By.id(ucus));
+        clickBy(By.id(flight));
     }
 
-    @Step("Yön bilgisi <nereden> , <nereye>")
-    public void directionInformation(String nereden , String nereye) throws IOException {
+    @Step("Departure <from> is selected and <button> is clicked, destination <to> is selected and <buttonTwo> is clicked")
+    public void directionInformation(String from , String button, String to, String buttonTwo) throws IOException {
         clickBy(By.id("com.turkishairlines.mobile:id/frDashboard_llFrom"));
 
-        nereden=getValueFromExcel(1,1);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAirportSelection_etSearch"),nereden);
+        from=getValueFromExcel(1,1);
+        sendKeysBy(By.id(button),from);
 
         clickBy(By.xpath("(//android.widget.TextView[@resource-id=\"com.turkishairlines.mobile:id/itemAirport_tvBottom\"])[3]"));
 
         clickBy(By.id("com.turkishairlines.mobile:id/frDashboard_llTo"));
 
-        nereye=getValueFromExcel(2,1);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAirportSelection_etSearch"),nereye);
+        to=getValueFromExcel(2,1);
+        sendKeysBy(By.id(buttonTwo),to);
 
         clickBy(By.id("com.turkishairlines.mobile:id/itemAirport_tvBottom"));
     }
 
-    @Step("Tarih bilgisi <button> günün tarihinden 2 gün sonra ya seçilir")
+    @Step("Date information is either selected 2 days after the current date <button>")
     public void dateDirection(String button)
     {
         clickBy(By.id(button));
@@ -57,19 +57,19 @@ public class StepImplementation extends BaseTest {
         tarihelement.click();
     }
 
-    @Step("Tamam butonuna <button> tıklanır")
+    @Step("Click the OK button <button>")
     public void okButton(String button)
     {
         clickBy(By.id(button));
     }
 
-    @Step("Yolcu sayısı <button> olarak seçilir")
+    @Step("The number of passengers is selected as 2 <button>")
     public void personIncrease(String button)
     {
         clickBy(By.xpath(button));
     }
 
-    @Step("Ucus ara <button> tıklanır")
+    @Step("Search flight <button> is clicked")
     public void searchButton(String button)
     {
         clickBy(By.id(button));
@@ -81,41 +81,42 @@ public class StepImplementation extends BaseTest {
     {
     }
 
-    @Step("Ekonomik ucus için <button1>, <button2> secilir")
+    @Step("Click <button1>, <button2> for economic flight")
     public void economicalFlight(String button1, String button2)
     {
         clickBy(By.xpath(button1));
         clickBy(By.xpath(button2));
     }
 
-    @Step("Devam <button> tıklanır")
+    @Step("Click on the <button> button")
     public void continuationButton(String button)
     {
         clickBy(By.id(button));
 
     }
 
-    @Step("1. Yolcu <firstname>,  <lastname>, <birthday>, <email>, <tc>")
-    public void addPassenger(String firstname, String lastname, String birthday, String email, String tc) throws IOException {
-        clickBy(By.id("com.turkishairlines.mobile:id/frPickPassengerListItemAdd_ivArrow"));
+    @Step("1.passenger information: <firstname> <button1>,  <lastname> <button2>, <birthday> <button3>, <email> <button4>, <tc> <button5>")
+    public void addPassenger(String firstname,String button1, String lastname,String button2, String birthday,String button3, String email,String button4, String tc,String button5) throws IOException {
+
+       clickBy(By.id("com.turkishairlines.mobile:id/frPickPassengerListItemAdd_ivArrow"));
 
         firstname=getValueFromExcel(3,1);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddName"), firstname);
+        sendKeysBy(By.id(button1), firstname);
 
         lastname=getValueFromExcel(4,1);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName"),lastname);
+        sendKeysBy(By.id(button2),lastname);
 
         clickBy(By.id("com.turkishairlines.mobile:id/form_checkbox_right"));
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth"),birthday);
+        sendKeysBy(By.id(button3),birthday);
 
         email=getValueFromExcel(6,1);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail"),email);
+        sendKeysBy(By.id(button4),email);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_left\"])[2]"));
 
         tc=getValueFromExcel(7,1);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN"),tc);
+        sendKeysBy(By.id(button5),tc);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_right\"])[3]"));
 
@@ -123,37 +124,42 @@ public class StepImplementation extends BaseTest {
 
     }
 
-    @Step("2. Yolcu <firstname>, <lastname>, <birthday>, <email>, <tc>")
-    public void secondPassenger(String firstname, String lastname,String birthday, String email, String tc) throws IOException {
+    @Step("2.passenger information: <firstname> <button1>,  <lastname> <button2>, <birthday> <button3>, <email> <button4>, <tc> <button5>")
+    public void secondPassenger(String firstname,String button1, String lastname,String button2, String birthday,String button3, String email,String button4, String tc,String button5) throws IOException {
         clickBy(By.xpath("(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/frPickPassengerlistheader_imArrow\"])[2]"));
 
         clickBy(By.xpath("(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/frPickPassengerListItemAdd_ivArrow\"])[2]"));
 
         firstname=getValueFromExcel(8,1);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddName"),firstname);
+        sendKeysBy(By.id(button1),firstname);
 
         lastname=getValueFromExcel(9,1);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName"),lastname);
+        sendKeysBy(By.id(button2),lastname);
 
         clickBy(By.id("com.turkishairlines.mobile:id/form_checkbox_right"));
 
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth"),birthday);
+        sendKeysBy(By.id(button3),birthday);
 
         email=getValueFromExcel(11,1);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail"),email);
+        sendKeysBy(By.id(button4),email);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_left\"])[2]"));
 
         tc=getValueFromExcel(12,1);
-        sendKeysBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN"),tc);
+        sendKeysBy(By.id(button5),tc);
 
         clickBy(By.xpath("(//android.widget.CheckBox[@resource-id=\"com.turkishairlines.mobile:id/form_checkbox_right\"])[3]"));
 
         clickBy(By.id("com.turkishairlines.mobile:id/frAddNewPassenger_btnAddPassenger"));
 
-        clickBy(By.id("com.turkishairlines.mobile:id/frPickPassenger_btnContinue"));
 
 
+    }
+
+    @Step("Save button <button> is clicked")
+    public void saveButton(String button)
+    {
+        clickBy(By.id(button));
     }
 
     @Step("Cancel <button> click")
@@ -173,7 +179,6 @@ public class StepImplementation extends BaseTest {
         return (day+7+2);
     }
 
-    @Step("<by> elementine tıkla")
     public void clickBy(By by)
     {
        WebElement element= wait.until(ExpectedConditions.visibilityOfElementLocated((by)));
@@ -196,9 +201,8 @@ public class StepImplementation extends BaseTest {
             FileInputStream file = new FileInputStream(new File("information.xlsx"));
             XSSFWorkbook workbook = new XSSFWorkbook(file);
             XSSFSheet sheet = workbook.getSheetAt(0);
-        DataFormatter formatter = new DataFormatter();
-        String val = formatter.formatCellValue(sheet.getRow(row).getCell(cell));
-            //String cellData=sheet.getRow(row).getCell(cell).getStringCellValue();
+            DataFormatter formatter = new DataFormatter();
+            String val = formatter.formatCellValue(sheet.getRow(row).getCell(cell));
             return val;
     }
 }

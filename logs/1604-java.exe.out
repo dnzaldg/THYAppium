@@ -1,0 +1,74 @@
+{"logLevel":"debug","message":"multithreading is set to false"}
+{"logLevel":"debug","message":"Using reflection to scan dependencies for gauge implementations..."}
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+{"logLevel":"debug","message":"gauge-java took 1154milliseconds to load and scan. This should be less than 'runner_connection_timeout' config value."}
+{"logLevel":"debug","message":"run 'gauge config runner_connection_timeout' and verify that it is < 1154"}
+{"logLevel":"debug","message":"starting gRPC server..."}
+{"logLevel":"debug","message":"started gRPC server on port 50488"}
+{"logLevel":"info","message":"Listening on port:50488"}
+{"logLevel":"debug","message":"Scanning packages for steps"}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.finish' and 'com.testinium.StepImplementation.finish'"}
+{"logLevel":"debug","message":"Found Cancel {} click in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.dateDirection' and 'com.testinium.StepImplementation.dateDirection'"}
+{"logLevel":"debug","message":"Found Date information is either selected 2 days after the current date {} in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.continuationButton' and 'com.testinium.StepImplementation.continuationButton'"}
+{"logLevel":"debug","message":"Found Click on the {} button in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.secondPassenger' and 'com.testinium.StepImplementation.secondPassenger'"}
+{"logLevel":"debug","message":"Found 2.passenger information: {} {},  {} {}, {} {}, {} {}, {} {} in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.saveButton' and 'com.testinium.StepImplementation.saveButton'"}
+{"logLevel":"debug","message":"Found Save button {} is clicked in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.economicalFlight' and 'com.testinium.StepImplementation.economicalFlight'"}
+{"logLevel":"debug","message":"Found Click {}, {} for economic flight in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.okButton' and 'com.testinium.StepImplementation.okButton'"}
+{"logLevel":"debug","message":"Found Click the OK button {} in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.flyControl' and 'com.testinium.StepImplementation.flyControl'"}
+{"logLevel":"debug","message":"Found Ucusların listelendiği kontrol edilir in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.directionInformation' and 'com.testinium.StepImplementation.directionInformation'"}
+{"logLevel":"debug","message":"Found Departure {} is selected and {} is clicked, destination {} is selected and {} is clicked in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.start' and 'com.testinium.StepImplementation.start'"}
+{"logLevel":"debug","message":"Found Homepage opens {} in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.addPassenger' and 'com.testinium.StepImplementation.addPassenger'"}
+{"logLevel":"debug","message":"Found 1.passenger information: {} {},  {} {}, {} {}, {} {}, {} {} in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.oneDirection' and 'com.testinium.StepImplementation.oneDirection'"}
+{"logLevel":"debug","message":"Found One way {} is selected in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.personIncrease' and 'com.testinium.StepImplementation.personIncrease'"}
+{"logLevel":"debug","message":"Found The number of passengers is selected as 2 {} in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.searchButton' and 'com.testinium.StepImplementation.searchButton'"}
+{"logLevel":"debug","message":"Found Search flight {} is clicked in current project scope."}
+{"logLevel":"debug","message":"Comparing 'com.testinium.StepImplementation.ticket' and 'com.testinium.StepImplementation.ticket'"}
+{"logLevel":"debug","message":"Found Click Buy ticket {} in current project scope."}
+{"logLevel":"debug","message":"Scanning packages for hooks"}
+{"logLevel":"debug","message":"Scanned steps (using static parsing + reflections): "}
+{"logLevel":"debug","message":"\tDate information is either selected 2 days after the current date {} : public void dateDirection(String button)"}
+{"logLevel":"debug","message":"\tClick Buy ticket {} : public void ticket(String button)"}
+{"logLevel":"debug","message":"\tCancel {} click : public void finish(String button)"}
+{"logLevel":"debug","message":"\tClick {}, {} for economic flight : public void economicalFlight(String button1, String button2)"}
+{"logLevel":"debug","message":"\tDeparture {} is selected and {} is clicked, destination {} is selected and {} is clicked : public void directionInformation(String from, String button, String to, String buttonTwo) throws IOException"}
+{"logLevel":"debug","message":"\tClick on the {} button : public void continuationButton(String button)"}
+{"logLevel":"debug","message":"\tHomepage opens {} : public void start(String button)"}
+{"logLevel":"debug","message":"\tOne way {} is selected : public void oneDirection(String flight)"}
+{"logLevel":"debug","message":"\tUcusların listelendiği kontrol edilir : public void flyControl()"}
+{"logLevel":"debug","message":"\t2.passenger information: {} {},  {} {}, {} {}, {} {}, {} {} : public void secondPassenger(String firstname, String button1, String lastname, String button2, String birthday, String button3, String email, String button4, String tc, String button5) throws IOException"}
+{"logLevel":"debug","message":"\tSearch flight {} is clicked : public void searchButton(String button)"}
+{"logLevel":"debug","message":"\t1.passenger information: {} {},  {} {}, {} {}, {} {}, {} {} : public void addPassenger(String firstname, String button1, String lastname, String button2, String birthday, String button3, String email, String button4, String tc, String button5) throws IOException"}
+{"logLevel":"debug","message":"\tClick the OK button {} : public void okButton(String button)"}
+{"logLevel":"debug","message":"\tThe number of passengers is selected as 2 {} : public void personIncrease(String button)"}
+{"logLevel":"debug","message":"\tSave button {} is clicked : public void saveButton(String button)"}
+Aug 20, 2020 2:28:20 PM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+INFO: Detected dialect: W3C
+{"logLevel":"debug","message":"Executing 'Homepage opens {}' using 'class com.testinium.StepImplementation.start"}
+{"logLevel":"debug","message":"Executing 'Click Buy ticket {}' using 'class com.testinium.StepImplementation.ticket"}
+{"logLevel":"debug","message":"Executing 'One way {} is selected' using 'class com.testinium.StepImplementation.oneDirection"}
+{"logLevel":"debug","message":"Executing 'Departure {} is selected and {} is clicked, destination {} is selected and {} is clicked' using 'class com.testinium.StepImplementation.directionInformation"}
+{"logLevel":"debug","message":"Executing 'Date information is either selected 2 days after the current date {}' using 'class com.testinium.StepImplementation.dateDirection"}
+{"logLevel":"debug","message":"Executing 'Click the OK button {}' using 'class com.testinium.StepImplementation.okButton"}
+{"logLevel":"debug","message":"Executing 'The number of passengers is selected as 2 {}' using 'class com.testinium.StepImplementation.personIncrease"}
+{"logLevel":"debug","message":"Executing 'Search flight {} is clicked' using 'class com.testinium.StepImplementation.searchButton"}
+{"logLevel":"debug","message":"Executing 'Click {}, {} for economic flight' using 'class com.testinium.StepImplementation.economicalFlight"}
+{"logLevel":"debug","message":"Executing 'Click on the {} button' using 'class com.testinium.StepImplementation.continuationButton"}
+{"logLevel":"debug","message":"Executing '1.passenger information: {} {},  {} {}, {} {}, {} {}, {} {}' using 'class com.testinium.StepImplementation.addPassenger"}
+{"logLevel":"debug","message":"Executing '2.passenger information: {} {},  {} {}, {} {}, {} {}, {} {}' using 'class com.testinium.StepImplementation.secondPassenger"}
+{"logLevel":"debug","message":"Executing 'Save button {} is clicked' using 'class com.testinium.StepImplementation.saveButton"}
+{"logLevel":"debug","message":"Executing 'Cancel {} click' using 'class com.testinium.StepImplementation.finish"}

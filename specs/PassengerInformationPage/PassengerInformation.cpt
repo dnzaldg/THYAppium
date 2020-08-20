@@ -1,7 +1,21 @@
 Created by testinium on 8/19/2020
 
 This is a concept file with following syntax for each concept.
-# Passenger Information
-*1. Yolcu "FirstName",  "LastName", "02-08-1997", "Email", "Tc"
-*2. Yolcu "FirstNameTwo", "LastNameTwo", "22-07-1995", "EmailTwo", "TcTwo"
+# 1.passenger information: <firstname>,  <lastname>, <birthday>, <email>, <tc>
+*1.passenger information: <firstname> "com.turkishairlines.mobile:id/frAddNewPassenger_etAddName",  <lastname> "com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName", <birthday> "com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth", <email> "com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail", <tc> "com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN"
+
+# 2.passenger information: <firstname>,  <lastname>, <birthday>, <email>, <tc>
+*2.passenger information: <firstname> "com.turkishairlines.mobile:id/frAddNewPassenger_etAddName",  <lastname> "com.turkishairlines.mobile:id/frAddNewPassenger_etAddLastName", <birthday> "com.turkishairlines.mobile:id/frAddNewPassenger_etAddDateOfBirth", <email> "com.turkishairlines.mobile:id/frAddNewPassenger_etAddEmail", <tc> "com.turkishairlines.mobile:id/frAddNewPassenger_etAddTCKN"
+
+# Click the Next button
+*Save button "com.turkishairlines.mobile:id/frPickPassenger_btnContinue" is clicked
+
+# Click the Cancel button
 *Cancel "com.turkishairlines.mobile:id/toolbarBase_tvCancel" click
+
+# Passenger Information: 1.passenger <firstname>,  <lastname>, <birthday>, <email>, <tc> and 2.passenger <firstname>,  <lastname>, <birthday>, <email>, <tc>
+*1.passenger information: <firstname>,  <lastname>, <birthday>, <email>, <tc>
+*2.passenger information: <firstname>,  <lastname>, <birthday>, <email>, <tc>
+*Click the Next button
+*Click the Cancel button
+

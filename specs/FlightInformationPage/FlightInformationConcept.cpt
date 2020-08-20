@@ -1,6 +1,12 @@
 Created by testinium on 8/19/2020
 
 This is a concept file with following syntax for each concept.
+# Economic flight is chosen
+*Click "(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/itemFlightSearchParent_ivArrow\"])[1]", "(//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/brandItem\"])[1]" for economic flight
+
+#Click on the Continue button
+*Click on the "com.turkishairlines.mobile:id/frFlightSearch_btnContinue" button
+
 # Flight Information
-*Ekonomik ucus için "(//android.widget.ImageView[@resource-id=\"com.turkishairlines.mobile:id/itemFlightSearchParent_ivArrow\"])[1]", "(//android.view.ViewGroup[@resource-id=\"com.turkishairlines.mobile:id/brandItem\"])[1]" secilir
-*Devam "com.turkishairlines.mobile:id/frFlightSearch_btnContinue" tıklanır
+*Economic flight is chosen
+*Click on the Continue button
